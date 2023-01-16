@@ -4,7 +4,7 @@ $azres = Get-AzResource
 ForEach($res in $azres)
 {
 
-if($res.ResourceGroupName -notlike 'shell'){
+if($res.ResourceGroupName -notlike '*shell*'){
 $res.ResourceGroupName
 write-host "Found resource $res.$res.ResourceGroupName for deletion" -foregroundcolor red
 write-host "Found resource $res.ResourceId for deletion" -foregroundcolor red
@@ -18,7 +18,7 @@ $azresgrp = Get-AzResourceGroup
 ForEach($resgrp in $azresgrp)
 {
 
-if($resgrp.ResourceGroupName -notlike 'shell'){
+if($resgrp.ResourceGroupName -notlike '*shell*'){
 $resgrp.ResourceGroupName
 write-host "Found resource $resgrp.$res.ResourceGroupName for deletion" -foregroundcolor red
 write-host "Found resource $resgrpId for deletion" -foregroundcolor red
